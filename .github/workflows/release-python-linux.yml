@@ -65,6 +65,7 @@ jobs:
         with:
           command: build
           target: ${{ steps.target.outputs.target }}
+          manylinux: auto
           args: >
             --release -i ${{ matrix.python-version }}
             --manifest-path py-kola/Cargo.toml
@@ -82,7 +83,7 @@ jobs:
     needs: [build-wheels]
     environment:
       name: pypi
-      url: https://pypi.org/project/kola
+      url: https://test.pypi.org/project/kolat
     runs-on: ubuntu-22.04
     permissions:
       id-token: write
