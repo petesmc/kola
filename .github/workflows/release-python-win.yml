@@ -77,7 +77,7 @@ jobs:
     needs: [build-wheels]
     environment:
       name: pypi
-      url: https://pypi.org/project/kola
+      url: https://test.pypi.org/project/kola-test
     runs-on: ubuntu-22.04
     permissions:
       id-token: write
