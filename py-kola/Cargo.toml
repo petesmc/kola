@@ -8,7 +8,7 @@ name = "kolat"
 crate-type = ["cdylib"]
 
 [dependencies]
-kolat = { path = "../crates/kolat" }
+kola = { path = "../crates/kola" }
 pyo3 = { version = "0.25.1", features = ["extension-module", "chrono"] }
 thiserror = "2.0.12"
 pyo3-polars = { version = "0.22.0", features = [
