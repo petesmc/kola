@@ -35,7 +35,9 @@ jobs:
           python-version: 3.x
       - name: Build wheels
         uses: PyO3/maturin-action@v1
-        with:
+        env:
+          OPENSSL_DIR: /usr/local/ssl
+        with:         
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter --manifest-path py-kola/Cargo.toml
           sccache: ${{ !startsWith(github.ref, 'refs/tags/') }}
@@ -62,6 +64,8 @@ jobs:
           python-version: 3.x
       - name: Build wheels
         uses: PyO3/maturin-action@v1
+        env:
+          OPENSSL_DIR: /usr/local/openssl
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter --manifest-path py-kola/Cargo.toml
