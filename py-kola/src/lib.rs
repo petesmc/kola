@@ -6,7 +6,7 @@ use error::{KolaAuthError, KolaError, KolaIOError};
 use pyo3::prelude::*;
 
 #[pymodule]
-fn kola(py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn kolat(py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<KolaConnector>()?;
     m.add("KolaError", py.get_type::<KolaError>())?;
     m.add("KolaIOError", py.get_type::<KolaIOError>())?;
